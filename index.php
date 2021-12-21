@@ -28,9 +28,9 @@
                 }else{
                     $robotsCount = count($robots);
                     $lastRobot = $robots[$robotsCount - 1];
-                    $formatRobotIndex = $robotsCount + 1;
                     if($lastRobot["command"] != ""){
-                        $input = readline("Input starting coordinates for robot $formatRobotIndex:");
+                        $tmpRobotsCount = $robotsCount + 1;
+                        $input = readline("Input starting coordinates for robot $tmpRobotsCount:");
                         if($input != "stop"){
                             $robots[] = [
                                 "position" => $input,
@@ -39,7 +39,7 @@
                         }
                         
                     }else{
-                        $input = readline("Input commands for robot $formatRobotIndex:");
+                        $input = readline("Input commands for robot $robotsCount:");
                         if($input != "stop"){
                             $robots[$robotsCount - 1]["command"] = $input;
                         }
